@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "False"
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "44.202.252.45,127.0.0.1,localhost").split(",")
 
 
 # Application definition
@@ -82,11 +82,11 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "<db_name>"
-        "USER": "<db_username>",
-        "PASSWORD": "<password>",
-        "HOST": "<db_host>",
-        "PORT": "<db_port>",
+        "NAME": "django",
+        "USER": "django_user",
+        "PASSWORD": "django123",
+        "HOST": "44.202.252.45,localhost",
+        "PORT": "5432",
             
     }
 }
